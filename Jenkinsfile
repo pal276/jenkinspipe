@@ -4,7 +4,7 @@ pipeline {
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "maven3.8"
-	env.PATH=";c:\\Windows\\System32"
+	
     }
 
     stages {
@@ -29,6 +29,7 @@ pipeline {
 		}
 	
         stage('Build') {
+	    env.PATH = env.PATH + ";c:\\Windows\\System32"
             steps {
                 // Get some code from a GitHub repository
                 git 'https://github.com/pal276/bankrepository.git'
