@@ -9,6 +9,9 @@ pipeline {
 
     stages {
 	    stage ('Preparation'){
+		    steps{
+			    echo 'I am preparing'
+		    }
 		    env.PATH = env.PATH + ";c:\\Windows\\System32"
 	    }
 		stage ('Test'){
